@@ -1,0 +1,41 @@
+{
+  "name": "hoodie-standalone-store",
+  "description": "CouchDB REST & front-end API",
+  "main": "index.js",
+  "bin": "bin/server",
+  "scripts": {
+    "pretest": "standard",
+    "test": "node tests | tap-spec",
+    "start": "bin/server",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hoodiehq/hoodie-standalone-store.git"
+  },
+  "keywords": [
+    "hapi",
+    "plugin",
+    "couchdb",
+    "pouchdb",
+    "hoodie"
+  ],
+  "author": "Gregor Martynus <gregor@martynus.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoodiehq/hoodie-standalone-store/issues"
+  },
+  "homepage": "https://github.com/hoodiehq/hoodie-standalone-store#readme",
+  "devDependencies": {
+    "nock": "^2.17.0",
+    "semantic-release": "^6.0.3",
+    "standard": "^5.3.1",
+    "tap": "^2.2.0",
+    "tap-spec": "^4.1.0"
+  },
+  "dependencies": {
+    "h2o2": "^4.0.1",
+    "hapi": "^11.0.2",
+    "joi": "^7.0.0"
+  }
+}
