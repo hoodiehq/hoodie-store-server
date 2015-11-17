@@ -1,7 +1,8 @@
 var Hapi = require('hapi')
 var H2o2 = require('h2o2')
+var nock = require('nock')
 var test = require('tap').test
-var Wreck = require('wreck')
+
 var plugin = require('../')
 
 var noop = function () {}
@@ -26,11 +27,9 @@ test('options.couchdb is required', function (t) {
 test('proxies request to options.couchdb', function (t) {
   t.plan(1)
 
-  var orig = Wreck.request
-  Wreck.request = function (method, uri, options, callback) {
-    Wreck.request = orig
-    t.is(uri, 'http://example.com/foo', 'path is prefixed by http://example.com')
-  }
+  var mock = nock('http://example.com')
+    .get('/foo')
+    .reply(200, {ok: true})
 
   var server = provisionServer()
   server.register({
@@ -40,7 +39,9 @@ test('proxies request to options.couchdb', function (t) {
     }
   }, noop)
 
-  server.inject('/foo', noop)
+  server.inject('/foo', function (response) {
+    t.ok(mock.isDone(), 'request proxied to http://example.com/foo')
+  })
 })
 
 test('adds basic auth header', function (t) {
