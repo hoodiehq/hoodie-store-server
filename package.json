@@ -1,5 +1,5 @@
 {
-  "name": "hoodie-standalone-store",
+  "name": "hoodie-server-store",
   "description": "CouchDB REST & front-end API",
   "main": "index.js",
   "bin": "bin/server",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hoodiehq/hoodie-standalone-store.git"
+    "url": "https://github.com/hoodiehq/hoodie-server-store.git"
   },
   "keywords": [
     "hapi",
@@ -25,9 +25,9 @@
   "author": "Gregor Martynus <gregor@martynus.net>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hoodiehq/hoodie-standalone-store/issues"
+    "url": "https://github.com/hoodiehq/hoodie-server-store/issues"
   },
-  "homepage": "https://github.com/hoodiehq/hoodie-standalone-store#readme",
+  "homepage": "https://github.com/hoodiehq/hoodie-server-store#readme",
   "devDependencies": {
     "coveralls": "^2.11.4",
     "nock": "^3.0.0",
