@@ -2,7 +2,6 @@
   "name": "hoodie-server-store",
   "description": "CouchDB REST & front-end API",
   "main": "index.js",
-  "bin": "bin/server",
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "standard",
