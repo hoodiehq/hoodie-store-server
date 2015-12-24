@@ -6,17 +6,27 @@ hapiCouchDbStore.attributes = {
 var normaliseOptions = require('./lib/normalise-options')
 
 function hapiCouchDbStore (server, options, next) {
+  console.log(1);
   try {
     options = normaliseOptions(options)
   } catch (error) {
+    console.log(error);
     return next(error)
   }
+  console.log(2);
+  try {
+    var p = require('./lib/couchdb-proxy')
+  } catch(e) {
+    console.log(e);
+    return next(e)
+  }
   server.register({
-    register: require('./lib/couchdb-proxy'),
+    register: p,
     options: options
   }, {
     routes: {
-      prefix: options.prefix
+      // prefix: options.prefix
     }
   }, next)
+  console.log(4);
 }
