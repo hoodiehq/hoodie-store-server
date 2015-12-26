@@ -14,9 +14,5 @@ function hapiCouchDbStore (server, options, next) {
   server.register({
     register: require('./lib/couchdb-proxy'),
     options: options
-  }, {
-    routes: {
-      prefix: options.prefix
-    }
   }, next)
 }
