@@ -1,6 +1,7 @@
 var Hapi = require('hapi')
 var h2o2 = require('h2o2')
 var nock = require('nock')
+var PouchDB = require('pouchdb')
 var request = require('request').defaults({json: true})
 var test = require('tap').test
 
@@ -42,9 +43,9 @@ test('proxies request to options.pouchdb', function (t) {
   server.register({
     register: plugin,
     options: {
-      pouchdb: {
+      PouchDB: PouchDB.defaults({
         db: require('memdown')
-      }
+      })
     }
   }, noop)
 
