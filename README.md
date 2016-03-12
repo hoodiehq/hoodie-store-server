@@ -23,6 +23,10 @@ var hapiStore = require('hoodie-server-store')
 
 var server = new Hapi.Server()
 
+server.connection({
+  port: 8000
+})
+
 server.register({
   register: hapiStore,
   options: {
@@ -32,9 +36,7 @@ server.register({
   if (error) throw error
 })
 
-server.connection({
-  port: 8000
-})
+
 server.start(function () {
   console.log('Server running at %s', server.info.uri)
 })
