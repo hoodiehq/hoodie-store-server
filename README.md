@@ -40,23 +40,29 @@ server.start(function () {
 })
 ```
 
-### options.couchdb (required)
+### options.couchdb
 
 Url to CouchDB
 
 ```js
 options: {
-  couchdb: 'http://localhost:5984'
+  couchdb: 'http://admin:secret@localhost:5984'
 }
-// or
+// or use a node url object
 options: {
-  couchdb: {
-    url: 'http://localhost:5984',
-    admin: {
-      username: 'admin',
-      secret: 'secret'
-    }
-  }
+  couchdb: url.parse('http://admin:secret@localhost:5984')
+}
+```
+
+### options.PouchDB
+
+PouchDB constructor
+
+```js
+options: {
+  PouchDB: PouchDB.defaults({
+    db: require('memdown')
+  })
 }
 ```
 
