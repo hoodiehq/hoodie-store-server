@@ -32,7 +32,7 @@
     "memdown": "^1.1.2",
     "nock": "^7.0.1",
     "nyc": "^6.0.0",
-    "pouchdb": "^5.2.1",
+    "pouchdb": "^5.3.1",
     "request": "^2.69.0",
     "semantic-release": "^6.0.3",
     "standard": "^6.0.4",
