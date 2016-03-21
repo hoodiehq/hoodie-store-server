@@ -1,25 +1,25 @@
 # THIS IS WORK IN PROGRESS
 
-# hoodie-server-store
+# hoodie-store-server
 
 > CouchDB APIs for storing JSON data and sync
 
-[![Build Status](https://travis-ci.org/hoodiehq/hoodie-server-store.svg?branch=master)](https://travis-ci.org/hoodiehq/hoodie-server-store)
-[![Coverage Status](https://coveralls.io/repos/hoodiehq/hoodie-server-store/badge.svg?branch=master)](https://coveralls.io/r/hoodiehq/hoodie-server-store?branch=master)
-[![Dependency Status](https://david-dm.org/hoodiehq/hoodie-server-store.svg)](https://david-dm.org/hoodiehq/hoodie-server-store)
-[![devDependency Status](https://david-dm.org/hoodiehq/hoodie-server-store/dev-status.svg)](https://david-dm.org/hoodiehq/hoodie-server-store#info=devDependencies)
+[![Build Status](https://travis-ci.org/hoodiehq/hoodie-store-server.svg?branch=master)](https://travis-ci.org/hoodiehq/hoodie-store-server)
+[![Coverage Status](https://coveralls.io/repos/hoodiehq/hoodie-store-server/badge.svg?branch=master)](https://coveralls.io/r/hoodiehq/hoodie-store-server?branch=master)
+[![Dependency Status](https://david-dm.org/hoodiehq/hoodie-store-server.svg)](https://david-dm.org/hoodiehq/hoodie-store-server)
+[![devDependency Status](https://david-dm.org/hoodiehq/hoodie-store-server/dev-status.svg)](https://david-dm.org/hoodiehq/hoodie-store-server#info=devDependencies)
 
 ## Install
 
 ```
-npm install --save hoodie-server-store
+npm install --save @hoodie/store-server
 ```
 
 ## Example
 
 ```js
 var Hapi = require('hapi')
-var hapiStore = require('hoodie-server-store')
+var hapiStore = require('@hoodie/store-server')
 
 var server = new Hapi.Server()
 
@@ -89,8 +89,8 @@ options: {
 ## Local setup & tests
 
 ```bash
-git clone git@github.com:hoodiehq/hoodie-server-store.git
-cd hoodie-server-store
+git clone git@github.com:hoodiehq/hoodie-store-server.git
+cd hoodie-store-server
 npm install
 npm test
 ```
