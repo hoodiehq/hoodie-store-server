@@ -1,5 +1,5 @@
 {
-  "name": "hoodie-server-store",
+  "name": "@hoodie/store-server",
   "description": "CouchDB REST & front-end API",
   "main": "index.js",
   "scripts": {
@@ -44,5 +44,8 @@
     "express-pouchdb": "^1.0.2",
     "h2o2": "^5.0.0",
     "hapi": "^13.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
