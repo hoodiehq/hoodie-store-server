@@ -1,3 +1,4 @@
+// PR test
 module.exports = hapiCouchDbStore
 
 hapiCouchDbStore.attributes = {
