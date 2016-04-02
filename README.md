@@ -89,7 +89,7 @@ options: {
 ## Local setup & tests
 
 ```bash
-git clone git@github.com:hoodiehq/hoodie-store-server.git
+git clone https://github.com/hoodiehq/hoodie-store-server.git
 cd hoodie-store-server
 npm install
 npm test
