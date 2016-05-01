@@ -93,12 +93,6 @@ npm install
 npm test
 ```
 
-To start the [local dev server](bin/server), run
-
-```
-npm start
-```
-
 ## License
 
 [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
