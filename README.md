@@ -1,5 +1,3 @@
-# THIS IS WORK IN PROGRESS
-
 # hoodie-store-server
 
 > CouchDB APIs for storing JSON data and sync
