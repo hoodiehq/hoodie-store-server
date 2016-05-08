@@ -12,12 +12,6 @@
 Compatible with [CouchDB](https://couchdb.apache.org/) and [PouchDB](https://pouchdb.com/)
 for persistence.
 
-## Install
-
-```
-npm install --save @hoodie/store-server
-```
-
 ## Example
 
 ```js
@@ -45,9 +39,11 @@ server.start(function () {
 })
 ```
 
+## Options
+
 ### options.couchdb
 
-Url to CouchDB
+Url to CouchDB. _Required unless `options.PouchDB` is set_
 
 ```js
 options: {
@@ -61,7 +57,7 @@ options: {
 
 ### options.PouchDB
 
-PouchDB constructor
+PouchDB constructor. _Required unless `options.couchdb` is set_
 
 ```js
 options: {
@@ -73,8 +69,7 @@ options: {
 
 ### options.hooks
 
-Route lifecycle hooks, see http://hapijs.com/api#request-lifecycle
-
+Route lifecycle hooks. _Optional_
 
 ```js
 options: {
@@ -89,14 +84,28 @@ options: {
 }
 ```
 
-## Local setup & tests
+See http://hapijs.com/api#request-lifecycle for more information
 
-```bash
+## Testing
+
+Local setup
+
+```
 git clone https://github.com/hoodiehq/hoodie-store-server.git
 cd hoodie-store-server
 npm install
+```
+
+Run all tests and code style checks
+
+```
 npm test
 ```
+
+## Contributing
+
+Have a look at the Hoodie project's [contribution guidelines](https://github.com/hoodiehq/hoodie/blob/master/CONTRIBUTING.md).
+If you want to hang out you can join our [Hoodie Community Chat](http://hood.ie/chat/).
 
 ## License
 
