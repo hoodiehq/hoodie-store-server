@@ -1,11 +1,16 @@
 # hoodie-store-server
 
-> CouchDB APIs for storing JSON data and sync
+> CouchDB API for data persistence and offline sync
 
 [![Build Status](https://travis-ci.org/hoodiehq/hoodie-store-server.svg?branch=master)](https://travis-ci.org/hoodiehq/hoodie-store-server)
 [![Coverage Status](https://coveralls.io/repos/hoodiehq/hoodie-store-server/badge.svg?branch=master)](https://coveralls.io/r/hoodiehq/hoodie-store-server?branch=master)
 [![Dependency Status](https://david-dm.org/hoodiehq/hoodie-store-server.svg)](https://david-dm.org/hoodiehq/hoodie-store-server)
 [![devDependency Status](https://david-dm.org/hoodiehq/hoodie-store-server/dev-status.svg)](https://david-dm.org/hoodiehq/hoodie-store-server#info=devDependencies)
+
+`hoodie-store-server` is a [Hapi](http://hapijs.com/) plugin that implements
+[CouchDB’s Document API](https://wiki.apache.org/couchdb/HTTP_Document_API).
+Compatible with [CouchDB](https://couchdb.apache.org/) and [PouchDB](https://pouchdb.com/)
+for persistence.
 
 ## Install
 
