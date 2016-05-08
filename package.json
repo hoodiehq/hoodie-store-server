@@ -1,6 +1,6 @@
 {
   "name": "@hoodie/store-server",
-  "description": "CouchDB REST & front-end API",
+  "description": "CouchDB API for data persistence and offline sync",
   "main": "index.js",
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
