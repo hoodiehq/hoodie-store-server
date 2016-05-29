@@ -40,7 +40,7 @@ function hapiCouchDbStore (server, options, next) {
   })
 
   server.route({
-    method: ['PUT', 'POST', 'COPY', 'DELETE', 'OPTIONS'],
+    method: ['PUT', 'POST', 'COPY', 'DELETE'],
     path: '/{path*}',
     config: {
       payload: {
