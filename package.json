@@ -38,7 +38,7 @@
     "request": "^2.69.0",
     "semantic-release": "^6.0.3",
     "standard": "^7.0.1",
-    "tap": "^5.0.1"
+    "tap": "^6.0.0"
   },
   "dependencies": {
     "boom": "^3.1.2",
