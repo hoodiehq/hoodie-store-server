@@ -7,6 +7,7 @@ hapiCouchDbStore.attributes = {
 var url = require('url')
 
 var boom = require('boom')
+var hapiToExpress = require('hapi-to-express')
 
 var validDbName = /^[a-zA-Z%]/
 
@@ -68,8 +69,11 @@ function hapiCouchDbStore (server, options, next) {
         }
       })
     }
-    request.raw.req.url = newUrl
-    xapp(request.raw.req, request.raw.res)
+
+    var hapress = hapiToExpress(request, reply)
+    hapress.req.url = newUrl
+
+    xapp(hapress.req, hapress.res)
   }
 
   next()
