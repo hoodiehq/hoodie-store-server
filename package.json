@@ -45,7 +45,8 @@
     "express": "^4.13.4",
     "express-pouchdb": "^1.0.2",
     "h2o2": "^5.0.0",
-    "hapi": "^13.0.0"
+    "hapi": "^13.0.0",
+    "hapi-to-express": "^1.2.1"
   },
   "publishConfig": {
     "access": "public"
