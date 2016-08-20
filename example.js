@@ -1,5 +1,13 @@
 var Hapi = require('hapi')
-var PouchDB = require('pouchdb')
+var PouchDB = require('pouchdb-core')
+  .plugin('pouchdb-plugin-http')
+  .defaults({
+    prefix: 'http://localhost:5984',
+    auth: {
+      username: 'admin',
+      password: 'secret'
+    }
+  })
 
 var server = new Hapi.Server()
 
@@ -10,10 +18,7 @@ server.connection({
 server.register({
   register: require('./'),
   options: {
-    PouchDB: PouchDB.defaults({
-      db: require('memdown')
-    })
-    // couchdb: 'http://admin:secret@localhost:5984'
+    PouchDB: PouchDB
   }
 }, function (err) {
   if (err) return console.log(err)
