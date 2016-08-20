@@ -8,15 +8,15 @@
 [![devDependency Status](https://david-dm.org/hoodiehq/hoodie-store-server/dev-status.svg)](https://david-dm.org/hoodiehq/hoodie-store-server#info=devDependencies)
 
 `hoodie-store-server` is a [Hapi](http://hapijs.com/) plugin that implements
-[CouchDB’s Document API](https://wiki.apache.org/couchdb/HTTP_Document_API).
-Compatible with [CouchDB](https://couchdb.apache.org/) and [PouchDB](https://pouchdb.com/)
-for persistence.
+[CouchDB’s Document API](https://wiki.apache.org/couchdb/HTTP_Document_API)
+and exposes a [JavaScript API](api) to manage databases, access and replications.
 
 ## Example
 
 ```js
 var Hapi = require('hapi')
-var hapiStore = require('@hoodie/store-server')
+var hoodieStore = require('@hoodie/store-server')
+var PouchDB = require('pouchdb')
 
 var server = new Hapi.Server()
 
@@ -25,9 +25,9 @@ server.connection({
 })
 
 server.register({
-  register: hapiStore,
+  register: hoodieStore,
   options: {
-    couchdb: 'http://localhost:5984'
+    PouchDB: PouchDB
   }
 }, function (error) {
   if (error) throw error
@@ -41,29 +41,31 @@ server.start(function () {
 
 ## Options
 
-### options.couchdb
+### options.PouchDB
 
-Url to CouchDB. _Required unless `options.PouchDB` is set_
+PouchDB constructor. _Required_
 
 ```js
 options: {
-  couchdb: 'http://admin:secret@localhost:5984'
-}
-// or use a node url object
-options: {
-  couchdb: url.parse('http://admin:secret@localhost:5984')
+  PouchDB: require('pouchdb-core').plugin('pouchdb-adapter-leveldb')
 }
 ```
 
-### options.PouchDB
-
-PouchDB constructor. _Required unless `options.couchdb` is set_
+If you want connect to a CouchDB, use the `pouchdb-adapter-http` and set
+`options.prefix` to the CouchDB url. All requests will be proxied to CouchDB
+directly, the PouchDB constructor is only used for [server.plugins.store.api](api)
 
 ```js
 options: {
-  PouchDB: PouchDB.defaults({
-    db: require('memdown')
-  })
+  PouchDB: require('pouchdb-core')
+    .plugin('pouchdb-adapter-http')
+    .defaults({
+      prefix: 'http://localhost:5984',
+      auth: {
+        username: 'admin',
+        password: 'secret'
+      }
+    })
 }
 ```
 
