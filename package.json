@@ -5,7 +5,7 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "standard",
-    "test": "nyc tap --no-cov tests/**/*.js",
+    "test": "nyc tap 'test/{unit,integration}/**/*-test.js'",
     "start": "bin/server",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "postsemantic-release": "npm run coverage",
@@ -35,7 +35,11 @@
     "memdown": "^1.1.2",
     "nock": "^8.0.0",
     "nyc": "^8.1.0",
-    "pouchdb": "^6.0.4",
+    "pouchdb-adapter-http": "^5.4.5",
+    "pouchdb-adapter-memory": "^5.4.5",
+    "pouchdb-core": "^5.4.5",
+    "pouchdb-hoodie-api": "^1.6.2",
+    "pouchdb-replication": "^5.4.5",
     "request": "^2.69.0",
     "semantic-release": "^6.0.3",
     "standard": "^8.0.0",
@@ -46,7 +50,9 @@
     "express": "^4.13.4",
     "express-pouchdb": "^1.0.2",
     "h2o2": "^5.0.0",
-    "hapi-to-express": "^1.2.1"
+    "hapi-to-express": "^1.2.1",
+    "lodash": "^4.13.1",
+    "to-id": "^1.0.5"
   },
   "publishConfig": {
     "access": "public"
