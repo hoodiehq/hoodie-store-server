@@ -31,7 +31,7 @@
   "devDependencies": {
     "coveralls": "^2.11.6",
     "greenkeeper-postpublish": "^1.0.0",
-    "hapi": "^14.0.0",
+    "hapi": "^15.0.1",
     "memdown": "^1.1.2",
     "nock": "^8.0.0",
     "nyc": "^8.1.0",
