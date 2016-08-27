@@ -42,7 +42,7 @@
     "tap": "^6.1.0"
   },
   "dependencies": {
-    "boom": "^3.1.2",
+    "boom": "^4.0.0",
     "express": "^4.13.4",
     "express-pouchdb": "^1.0.2",
     "h2o2": "^5.0.0",
