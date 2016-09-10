@@ -1,11 +1,11 @@
 var Hapi = require('hapi')
 var h2o2 = require('h2o2')
 var nock = require('nock')
-var PouchDB = require('pouchdb')
+var PouchDB = require('pouchdb-core')
 var request = require('request').defaults({json: true})
 var test = require('tap').test
 
-var plugin = require('../')
+var plugin = require('../../../')
 
 var noop = function () {}
 
@@ -16,7 +16,7 @@ function provisionServer () {
   return server
 }
 
-test('proxies request to options.couchdb', function (t) {
+test('proxies request to CouchDB', function (t) {
   t.plan(1)
 
   var mock = nock('http://example.com')
@@ -27,7 +27,11 @@ test('proxies request to options.couchdb', function (t) {
   server.register({
     register: plugin,
     options: {
-      couchdb: 'http://example.com'
+      PouchDB: PouchDB
+        .plugin(require('pouchdb-adapter-http'))
+        .defaults({
+          prefix: 'http://example.com'
+        })
     }
   }, noop)
 
@@ -36,16 +40,14 @@ test('proxies request to options.couchdb', function (t) {
   })
 })
 
-test('proxies request to options.pouchdb', function (t) {
+test('proxies request to PouchDB', function (t) {
   t.plan(4)
 
   var server = provisionServer()
   server.register({
     register: plugin,
     options: {
-      PouchDB: PouchDB.defaults({
-        db: require('memdown')
-      })
+      PouchDB: PouchDB.plugin(require('pouchdb-adapter-memory'))
     }
   }, noop)
 
@@ -71,9 +73,11 @@ test('adds basic auth header', function (t) {
   server.register({
     register: plugin,
     options: {
-      couchdb: {
-        location: 'http://example.com'
-      },
+      PouchDB: PouchDB
+        .plugin(require('pouchdb-adapter-http'))
+        .defaults({
+          prefix: 'http://example.com'
+        }),
       hooks: {
         onPreAuth: function (request, next) {
           request.headers.authorization = 'Basic chek12'
