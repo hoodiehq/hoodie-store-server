@@ -38,7 +38,6 @@
     "pouchdb-adapter-http": "^6.0.0",
     "pouchdb-adapter-memory": "^6.0.0",
     "pouchdb-core": "^6.0.0",
-    "pouchdb-hoodie-api": "^1.6.2",
     "pouchdb-replication": "^6.0.0",
     "request": "^2.69.0",
     "semantic-release": "^6.0.3",
@@ -52,6 +51,7 @@
     "h2o2": "^5.0.0",
     "hapi-to-express": "^1.2.1",
     "lodash": "^4.13.1",
+    "pouchdb-hoodie-api": "^1.6.2",
     "to-id": "^1.0.5"
   },
   "publishConfig": {
