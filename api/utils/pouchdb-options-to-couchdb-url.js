@@ -1,6 +1,7 @@
 module.exports = toCouchDbUrl
 
 var url = require('url')
+
 var get = require('lodash').get
 
 function toCouchDbUrl (pouchDbOptions) {
