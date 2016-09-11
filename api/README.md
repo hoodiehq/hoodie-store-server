@@ -601,12 +601,6 @@ replication documents.
 
 ### Note on CouchDB
 
-CouchDB has built-in access security features. We take advantage
-of these features in case data is stored in a CouchDB
-
-1. We set the `/_security` on database to prevent unwanted read access
-2. We use a combination of `/_security` and a custom design doc to prevent
-   unwanted write access.
-
-Note that CouchDB has no built-in support for write-only databases. In that case
-we set security so the database can be accessed by CouchDB admins only
+CouchDB comes with its own REST API, so if it’s accessible at a public URL people
+can directly access it. For that reason we set `/_security` on each database
+created by Hoodie so that it’s only readable by CouchDB admins.
