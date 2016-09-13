@@ -7,7 +7,7 @@ hapiCouchDbStore.attributes = {
 var url = require('url')
 
 var boom = require('boom')
-var hapiToExpress = require('hapi-to-express')
+var hapiToExpress = require('@gr2m/hapi-to-express')
 
 var StoreFactory = require('./api')
 var toCouchDbUrl = require('./api/utils/pouchdb-options-to-couchdb-url')
