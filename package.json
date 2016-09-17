@@ -37,7 +37,7 @@
     "nyc": "^8.1.0",
     "pouchdb-adapter-http": "^6.0.0",
     "pouchdb-adapter-memory": "^6.0.0",
-    "pouchdb-core": "^6.0.0",
+    "pouchdb-core": "^6.0.5",
     "pouchdb-replication": "^6.0.0",
     "semantic-release": "^6.0.3",
     "standard": "^8.0.0",
