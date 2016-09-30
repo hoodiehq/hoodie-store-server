@@ -35,7 +35,7 @@
     "memdown": "^1.1.2",
     "nock": "^8.0.0",
     "nyc": "^8.1.0",
-    "pouchdb-adapter-http": "^6.0.5",
+    "pouchdb-adapter-http": "^6.0.6",
     "pouchdb-adapter-memory": "^6.0.5",
     "pouchdb-core": "^6.0.5",
     "pouchdb-replication": "^6.0.5",
