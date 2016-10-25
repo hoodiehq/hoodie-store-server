@@ -43,7 +43,7 @@ test('Store', function (group) {
   })
 
   group.test('create / open / destroy walkthrough', function (t) {
-    t.plan(7)
+    t.plan(8)
 
     var Store = StoreAPIFactory(PouchDB)
 
@@ -51,6 +51,14 @@ test('Store', function (group) {
 
     .then(function (name) {
       t.is(name, 'dbname', 'Store.create resolves with name')
+
+      return Store.create('dbname')
+    })
+
+    .then(function () {
+      t.fail('Store.create should fail to create a store with name "dbname" twice')
+    }, function (error) {
+      t.is(error.status, 409, 'Store.create fails because database "dbname" already exists')
 
       return Store.exists('dbname')
     })
