@@ -22,7 +22,10 @@ function hapiCouchDbStore (server, options, next) {
   if (api.adapter === 'http') {
     // workaround for https://github.com/pouchdb/pouchdb/issues/5548
     var couchDbUrl = toCouchDbUrl(new options.PouchDB('hack', {skip_setup: true}).__opts)
-    server.register(require('h2o2'))
+    server.register({
+      register: require('h2o2'),
+      once: true
+    })
   } else {
     var xapp = require('express-pouchdb')(options.PouchDB, {
       mode: 'minimumForPouchDB'
