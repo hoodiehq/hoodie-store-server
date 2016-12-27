@@ -5,7 +5,7 @@ var PouchDB = require('pouchdb-core')
 var request = require('request').defaults({json: true})
 var test = require('tap').test
 
-var plugin = require('../../../')
+var plugin = require('../../')
 
 var noop = function () {}
 
