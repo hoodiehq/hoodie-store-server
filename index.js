@@ -8,9 +8,9 @@ var url = require('url')
 
 var boom = require('boom')
 var hapiToExpress = require('@gr2m/hapi-to-express')
+var StoreFactory = require('@hoodie/store-server-api')
 
-var StoreFactory = require('./api')
-var toCouchDbUrl = require('./api/utils/pouchdb-options-to-couchdb-url')
+var toCouchDbUrl = require('./utils/pouchdb-options-to-couchdb-url')
 
 var validDbName = /^[a-z]/ // must begin with a lowercase letter
 
