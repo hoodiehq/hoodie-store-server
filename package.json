@@ -3,7 +3,8 @@
   "description": "CouchDB API for data persistence and offline sync",
   "main": "index.js",
   "scripts": {
-    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc report",
+    "coverage:upload": "nyc report --reporter=text-lcov | coveralls",
     "pretest": "standard",
     "test": "nyc tap 'test/{unit,integration}/**/*-test.js'",
     "start": "bin/server",

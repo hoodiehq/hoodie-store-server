@@ -9,6 +9,7 @@ node_js:
   - 4
   - 6
 after_success:
+  - npm run coverage:upload
   - npm run semantic-release
 branches:
   except:
